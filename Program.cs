@@ -11,26 +11,50 @@
 
 // string[] arg = {"Hello", "2", "wotld", ":-"};
 
-// void Array (string[]arg)
-// {
-//     string[]A = new string [size];
 
-// }
-
-
-string[] AS;
+string[] arg;
 int size = 4;
 string a;
 
-AS = new string[size];
+arg = new string[size];
 
 Console.WriteLine("Введите массив:");
 
-      for (int i=0; i<AS.Length; i++)
+      for (int i=0; i<arg.Length; i++)
       {
-        Console.Write("AS[{0}] = ", i);
-        AS[i] = Console.ReadLine();
-        // Console.WriteLine($"{AS[i]}");
+        Console.Write("arg[{0}] = ", i);
+        arg[i] = Console.ReadLine();
+     
       }
-       Console.WriteLine($"{AS}");
+ 
 
+void PrintArray (string[] arg)
+{
+    Console.Write("[");
+    for (int i = 0; i<arg.Length; i++)
+    {
+        Console.Write(arg[i]);
+        if (i<arg.Length-1) Console.Write(",");
+    }
+    Console.WriteLine("]");
+}
+
+void StringArraySize(string[]arg)
+{
+    string[] newarg;
+    int count = 0;
+    newarg = new string [count];
+    for(int i = 0; i<newarg.Length;i++)
+    {
+    if(arg.Length<=3) 
+    {
+        count++; 
+        newarg[i] = arg[i];
+    
+}
+}
+}
+
+PrintArray(arg);
+StringArraySize(arg);
+// PrintArray(StringArraySize);
