@@ -41,14 +41,14 @@ void PrintArray (string[] arg)
 string [] StringArraySize(string[]arg)
 {
     string[] newarg;
-    int count = 0;
-    newarg = new string [count];
+    // int count = 0;
+    newarg = new string [arg.Length];
     
     for(int i = 0; i<newarg.Length;i++)
     {
     if(arg[i].Length<=3) 
     {
-        count++; 
+        // count++; 
         newarg[i] = arg[i];
    
 }
