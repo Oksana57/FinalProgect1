@@ -14,7 +14,6 @@
 
 string[] arg;
 int size = 4;
-string a;
 
 arg = new string[size];
 
@@ -39,22 +38,24 @@ void PrintArray (string[] arg)
     Console.WriteLine("]");
 }
 
-void StringArraySize(string[]arg)
+string [] StringArraySize(string[]arg)
 {
     string[] newarg;
     int count = 0;
     newarg = new string [count];
+    
     for(int i = 0; i<newarg.Length;i++)
     {
-    if(arg.Length<=3) 
+    if(arg[i].Length<=3) 
     {
         count++; 
         newarg[i] = arg[i];
-    
+   
 }
 }
+return newarg;
 }
 
 PrintArray(arg);
-StringArraySize(arg);
-// PrintArray(StringArraySize);
+string [] stringsize = StringArraySize(arg);
+PrintArray(stringsize);
