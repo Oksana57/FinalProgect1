@@ -9,53 +9,63 @@
 // [“Russia”, “Denmark”, “Kazan”] → []
 
 
-// string[] arg = {"Hello", "2", "wotld", ":-"};
 
-
-string[] arg;
-int size = 4;
-
-arg = new string[size];
-
-Console.WriteLine("Введите массив:");
-
-      for (int i=0; i<arg.Length; i++)
-      {
-        Console.Write("arg[{0}] = ", i);
-        arg[i] = Console.ReadLine();
-     
-      }
- 
-
-void PrintArray (string[] arg)
+void PrintArray(string[] arg)
 {
-    Console.Write("[");
-    for (int i = 0; i<arg.Length; i++)
+    Console.Write('[');
+    for (int i = 0; i < arg.Length; i++)
     {
-        Console.Write(arg[i]);
-        if (i<arg.Length-1) Console.Write(",");
+        Console.Write($"'{arg[i]}'");
+        if (i < arg.Length - 1) Console.Write(",");
     }
     Console.WriteLine("]");
 }
 
-string [] StringArraySize(string[]arg)
+string[] StringArraySize(string[] arg)
 {
     string[] newarg;
-    // int count = 0;
-    newarg = new string [arg.Length];
-    
-    for(int i = 0; i<newarg.Length;i++)
+
+    int size = arg.Length;
+
+    newarg = new string[size];
+    int count = 0;
+
+    for (int i = 0; i < newarg.Length; i++)
     {
-    if(arg[i].Length<=3) 
+
+        if (arg[i].Length <= 3)
+        {
+
+
+            newarg[count] = arg[i];
+            count++;
+
+
+        }
+    }
+    string[] newarg1 = new string[count];
+    for (int i = 0; i < newarg.Length && i < newarg1.Length; i++)
     {
-        // count++; 
-        newarg[i] = arg[i];
-   
+        newarg1[i] = newarg[i];
+    }
+    newarg = newarg1;
+
+    return newarg;
 }
-}
-return newarg;
+
+
+string[] arg;
+int size = 4;
+arg = new string[size];
+Console.WriteLine("Введите массив:");
+
+for (int i = 0; i < arg.Length; i++)
+{
+    Console.Write("arg[{0}] = ", i);
+    arg[i] = Console.ReadLine();
+
 }
 
 PrintArray(arg);
-string [] stringsize = StringArraySize(arg);
+string[] stringsize = StringArraySize(arg);
 PrintArray(stringsize);
